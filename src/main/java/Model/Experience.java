@@ -1,0 +1,118 @@
+package Model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Experience {
+
+    private String title;
+    private String company;
+    private String contract_type;
+
+    private String start_date;
+    private String end_date;
+
+    private String city;
+    private String region;
+    private String country;
+
+    private List<String> missions;
+    private List<Competence> competences;
+
+    public Experience(){
+
+    }
+
+    public Experience(String title, String company, String contract_type, String start_date, String end_date, String city, String region, String country, List<String> missions, List<Competence> competences) {
+        this.title = (title != null) ? title : "Missing Title";
+        this.company = (company != null) ? company : "Missing Company";
+        this.contract_type = (contract_type != null) ? contract_type : "Missing Contract Type";
+        this.start_date = (start_date != null) ? start_date : "Missing Start Date";
+        this.end_date = (end_date != null) ? end_date : "Missing End Date";
+        this.city = (city != null) ? city : "Missing City";
+        this.region = (region != null) ? region : "Missing Region";
+        this.country = (country != null) ? country : "Missing Country";
+        this.missions = (missions != null) ? missions : new ArrayList<>();
+        this.competences = (competences != null) ? competences : new ArrayList<>();
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getContract_type() {
+        return contract_type;
+    }
+
+    public void setContract_type(String contract_type) {
+        this.contract_type = contract_type;
+    }
+
+    public String getStart_date() {
+        return start_date;
+    }
+
+    public void setStart_date(String start_date) {
+        this.start_date = start_date;
+    }
+
+    public String getEnd_date() {
+        return end_date;
+    }
+
+    public void setEnd_date(String end_date) {
+        this.end_date = end_date;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public List<String> getMissions() {
+        return missions;
+    }
+
+    public void setMissions(List<String> missions) {
+        this.missions = missions;
+    }
+
+    public List<Competence> getCompetences() {
+        return competences;
+    }
+
+    public void setCompetences(List<Competence> competences) {
+        this.competences = competences;
+    }
+}
