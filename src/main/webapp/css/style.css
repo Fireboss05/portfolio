@@ -89,6 +89,8 @@ a:hover {
     }
 }
 
+/* projects.jsp page  */
+
 .projects {
     margin-top: 40px;
 }
@@ -159,3 +161,115 @@ a:hover {
     from { opacity: 0; transform: scale(0.95); }
     to { opacity: 1; transform: scale(1); }
 }
+
+/* parcours.jsp page  */
+
+.timelines {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.timeline {
+    flex: 1 1 45%;
+    position: relative;
+}
+
+.timeline h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.timeline ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.timeline li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 30px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    background-color: #007BFF;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline ul::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #ccc;
+}
+
+.timeline-content h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #343a40;
+}
+
+.timeline-date {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.timeline-content ul {
+    margin: 10px 0 0 0;
+    padding-left: 20px;
+    list-style: disc;
+}
+
+@media (max-width: 768px) {
+    .timelines {
+        flex-direction: column;
+    }
+    .timeline {
+        flex: 1 1 100%;
+    }
+}
+
+.competence-slider {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+    scrollbar-width: thin; /* Firefox */
+}
+
+.competence-slider::-webkit-scrollbar {
+    height: 6px;
+}
+.competence-slider::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+.competence-badge {
+    background: #f8f9fa;
+    color: #007BFF;
+    border: 1px solid #007BFF;
+    border-radius: 20px;
+    padding: 5px 15px;
+    white-space: nowrap;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.competence-badge:hover {
+    background: #007BFF;
+    color: white;
+}
+
