@@ -1,0 +1,54 @@
+{
+  "projects": [
+    {
+      "title": "Not so Alone",
+      "description": "(Premier) Jeu sur unity à l'occasion d'une GameJam (en duo). Je me suis occupé de 90% du code et 0% du visuel",
+      "image": "not_so_alone.webp",
+      "vignette": {
+        "title": "Not so Alone",
+        "description": "(Premier) Jeu sur unity à l'occasion d'une GameJam",
+        "image": "not_so_alone.webp"
+      }
+    },
+    {
+      "title": "Invoquez Esperez",
+      "description": "Jeu sur unity à l'occasion d'une GameJam. Je me suis occupé de 50% du code et 50% du visuel. Mon 4e projet sur Unity",
+      "image": "invoquez_esperez.png",
+      "vignette": {
+        "title": "Invoquez Esperez",
+        "description": "Jeu sur unity à l'occasion d'une GameJam",
+        "image": "invoquez_esperez.png"
+      }
+    },
+    {
+      "title": "Fond d'écran Têtard",
+      "description": "Fond d'écran que j'ai fait pour implémenter un algorithme de création de courbe (Catmull-Rom)",
+      "image": "poissons.jpg",
+      "vignette": {
+        "title": "Fond d'écran Têtard",
+        "description": "Fond d'écran que j'ai fait pour implémenter...",
+        "image": "poissons.jpg"
+      }
+    },
+    {
+      "title": "Fractales de Julia",
+      "description": "Visualisation des fractales de l'ensemble de Julia (statique). Codé sur processing (application de bureau)",
+      "image": "julia_projet_Julia.png",
+      "vignette": {
+        "title": "Fractales de Julia",
+        "description": "Visualisation des fractales de l'ensemble de Julia",
+        "image": "julia_projet_Julia.png"
+      }
+    },
+    {
+      "title": "Ensemble de Mandelbrot",
+      "description": "Visualisation de l'ensemble de Mandelbrot avec un zoom (peu d'optimisation). Codé sur processing (application de bureau)",
+      "image": "mandelbrot_projet_MandelbrotFin.png",
+      "vignette": {
+        "title": "Ensemble de Mandelbrot",
+        "description": "Visualisation de l'ensemble de Mandelbrot",
+        "image": "mandelbrot_projet_MandelbrotFin.png"
+      }
+    }
+  ]
+}
