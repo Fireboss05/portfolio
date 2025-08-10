@@ -13,20 +13,6 @@
         "Développement d'une application web en JakartaEE",
         "Mise en place de tests unitaires et d'intégration",
         "Optimisation des performances"
-      ],
-      "competences": [
-        {
-          "name": "Java",
-          "level": "Avancé"
-        },
-        {
-          "name": "JakartaEE",
-          "level": "Intermédiaire"
-        },
-        {
-          "name": "JavaScript",
-          "level": "Avancé"
-        }
       ]
     }
   ]

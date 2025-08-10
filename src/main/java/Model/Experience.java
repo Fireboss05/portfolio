@@ -17,13 +17,12 @@ public class Experience {
     private String country;
 
     private List<String> missions;
-    private List<Competence> competences;
 
     public Experience(){
 
     }
 
-    public Experience(String title, String company, String contract_type, String start_date, String end_date, String city, String region, String country, List<String> missions, List<Competence> competences) {
+    public Experience(String title, String company, String contract_type, String start_date, String end_date, String city, String region, String country, List<String> missions) {
         this.title = (title != null) ? title : "Missing Title";
         this.company = (company != null) ? company : "Missing Company";
         this.contract_type = (contract_type != null) ? contract_type : "Missing Contract Type";
@@ -33,7 +32,6 @@ public class Experience {
         this.region = (region != null) ? region : "Missing Region";
         this.country = (country != null) ? country : "Missing Country";
         this.missions = (missions != null) ? missions : new ArrayList<>();
-        this.competences = (competences != null) ? competences : new ArrayList<>();
     }
 
     public String getTitle() {
@@ -108,11 +106,4 @@ public class Experience {
         this.missions = missions;
     }
 
-    public List<Competence> getCompetences() {
-        return competences;
-    }
-
-    public void setCompetences(List<Competence> competences) {
-        this.competences = competences;
-    }
 }
