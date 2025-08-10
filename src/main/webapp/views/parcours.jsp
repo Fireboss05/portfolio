@@ -29,7 +29,7 @@
     <div class="timelines">
         <!-- Timeline 1 -->
         <div class="timeline">
-            <h2>Expériences Info</h2>
+            <h2>Expériences en Informatique</h2>
             <ul>
                 <%
                     for (Experience exp : experiencesInfo) {
@@ -50,7 +50,7 @@
                         <% if (exp.getCompetences() != null && !exp.getCompetences().isEmpty()) { %>
                         <div class="competence-slider">
                             <% for (Model.Competence comp : exp.getCompetences()) { %>
-                            <a href="CompetenceControllerServlet?comp=<%= java.net.URLEncoder.encode(comp.getName(), "UTF-8") %>"
+                            <a href="competenceController?comp=<%= java.net.URLEncoder.encode(comp.getName(), "UTF-8") %>"
                                class="competence-badge">
                                 <%= comp.getName() %>
                             </a>
@@ -86,7 +86,7 @@
                         <% if (exp.getCompetences() != null && !exp.getCompetences().isEmpty()) { %>
                         <div class="competence-slider">
                             <% for (Model.Competence comp : exp.getCompetences()) { %>
-                            <a href="CompetenceControllerServlet?comp=<%= java.net.URLEncoder.encode(comp.getName(), "UTF-8") %>"
+                            <a href="competenceController?comp=<%= java.net.URLEncoder.encode(comp.getName(), "UTF-8") %>"
                                class="competence-badge">
                                 <%= comp.getName() %>
                             </a>
