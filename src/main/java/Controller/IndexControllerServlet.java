@@ -118,12 +118,40 @@ public class IndexControllerServlet extends HttpServlet {
     }
 
     private void competences(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // DAO pour compétences
+        // DAO pour compétences, projets, experience
         CompetenceDAO competenceDAO = new CompetenceJsonDAO(request.getServletContext(), "/data/competences.json");
+        ProjectDAO projectDAO = new ProjectJsonDAO(request.getServletContext(), "/data/projets.json");
+        ExperienceDAO experienceDAO = new ExperienceJsonDAO(request.getServletContext(), "/data/experiences.json");
+
+        // DAO pour relations
+        ExperienceCompetenceDAO expCompDAO = new ExperienceCompetenceJsonDAO(request.getServletContext(), "/data/competences_d_experience.json", experienceDAO, competenceDAO);
+        ProjectCompetenceDAO projCompDAO = new ProjectCompetenceJsonDAO(request.getServletContext(), "/data/competences_de_projet.json", projectDAO, competenceDAO);
 
         // Récupération de toutes les compétences
         List<Competence> competences = competenceDAO.getAll();
+
+        // Préparer les maps : Compétence -> Expériences / Projets
+        Map<Competence, List<ExperienceCompetence>> competenceExperiences = new HashMap<>();
+        Map<Competence, List<ProjectCompetence>> competenceProjects = new HashMap<>();
+
+        for (Competence c : competences) {
+            // Expériences liées à la compétence
+            List<ExperienceCompetence> expComps = expCompDAO.getByCompetenceName(c.getName());
+            if (expComps != null && !expComps.isEmpty()) {
+                competenceExperiences.put(c, expComps);
+            }
+
+            // Projets liés à la compétence
+            List<ProjectCompetence> projComps = projCompDAO.getByCompetenceName(c.getName());
+            if (projComps != null && !projComps.isEmpty()) {
+                competenceProjects.put(c, projComps);
+            }
+        }
+
+        // Passage des données à la JSP
         request.setAttribute("competences", competences);
+        request.setAttribute("competenceExperiences", competenceExperiences);
+        request.setAttribute("competenceProjects", competenceProjects);
 
         // Forward vers la vue
         request.getRequestDispatcher("views/competences.jsp").forward(request, response);
