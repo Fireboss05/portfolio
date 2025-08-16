@@ -1,0 +1,34 @@
+{
+  "experience_competences": [
+    {
+      "experience": "Développeur Full Stack",
+      "competence": "Java",
+      "level": "Avancé"
+    },
+    {
+      "experience": "Développeur Full Stack",
+      "competence": "JakartaEE",
+      "level": "Intermédiaire"
+    },
+    {
+      "experience": "Développeur Full Stack",
+      "competence": "JavaScript",
+      "level": "Avancé"
+    },
+    {
+      "experience": "Développeur Full Stack 2",
+      "competence": "Java",
+      "level": "Avancé"
+    },
+    {
+      "experience": "Développeur Full Stack 2",
+      "competence": "JakartaEE",
+      "level": "Intermédiaire"
+    },
+    {
+      "experience": "Développeur Full Stack 2",
+      "competence": "JavaScript",
+      "level": "Avancé"
+    }
+  ]
+}
