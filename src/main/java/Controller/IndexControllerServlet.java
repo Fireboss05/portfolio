@@ -1,7 +1,8 @@
 package Controller;
 
-import Model.Experience;
-import Model.Project;
+import DAO.*;
+import DAO.Json.*;
+import Model.*;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,7 +14,10 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet("/indexController")
 public class IndexControllerServlet extends HttpServlet {
@@ -52,33 +56,28 @@ public class IndexControllerServlet extends HttpServlet {
     }
 
     private void parcours(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        InputStream input = getServletContext().getResourceAsStream("/data/experiences_informatiques.json");
+        ExperienceDAO experienceDAO = new ExperienceJsonDAO(request.getServletContext(), "/data/experiences.json");
+        CompetenceDAO competenceDAO = new CompetenceJsonDAO(request.getServletContext(), "/data/competences.json");
+        ExperienceCompetenceDAO experienceCompetenceDAO = new ExperienceCompetenceJsonDAO(request.getServletContext(), "/data/competences_d_experience.json",experienceDAO, competenceDAO);
 
-        ObjectMapper mapper = new ObjectMapper();
-        JsonNode root = mapper.readTree(input);
-        JsonNode experiencesInformatiquesArray = root.get("experiences_informatiques");
+        List<Experience> experiences = experienceDAO.getAll();
+        request.setAttribute("experiences", experiences);
 
-        List<Experience> experiencesInfo = mapper.readValue(
-                experiencesInformatiquesArray.toString(),
-                new TypeReference<>() {
+        Map<Experience, List<ExperienceCompetence>> experiencesCompetences = new HashMap<>();
+        for (Experience experience : experiences) {
+            experiencesCompetences.put(experience, experienceCompetenceDAO.getByExperienceTitle(experience.getTitle()));
+        }
+        request.setAttribute("experiencesCompetences", experiencesCompetences);
+
+        List<Competence> competences = new ArrayList<>();
+        for (List<ExperienceCompetence> experienceCompetences : experiencesCompetences.values()) {
+            for (ExperienceCompetence experienceCompetence : experienceCompetences) {
+                if(!competences.contains(experienceCompetence.getC())) {
+                    competences.add(experienceCompetence.getC());
                 }
-        );
-
-        request.setAttribute("experiencesInfo", experiencesInfo);
-
-        input = getServletContext().getResourceAsStream("/data/experiences_tierces.json");
-
-        mapper = new ObjectMapper();
-        root = mapper.readTree(input);
-        JsonNode experiencesTiercesArray = root.get("experiences_tierces");
-
-        List<Experience> experiencesTierces = mapper.readValue(
-                experiencesTiercesArray.toString(),
-                new TypeReference<>() {
-                }
-        );
-
-        request.setAttribute("experiencesTierces", experiencesTierces);
+            }
+        }
+        request.setAttribute("competences", competences);
 
         request.getRequestDispatcher("views/parcours.jsp").forward(request, response);
     }
@@ -86,23 +85,51 @@ public class IndexControllerServlet extends HttpServlet {
 
 
     private void projects(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        InputStream input = getServletContext().getResourceAsStream("/data/projets.json");
-
-        ObjectMapper mapper = new ObjectMapper();
-        JsonNode root = mapper.readTree(input);
-        JsonNode projectArray = root.get("projects");
-
-        List<Project> projects = mapper.readValue(
-                projectArray.toString(),
-                new TypeReference<>() {
-                }
+        // Instanciation des DAO
+        ProjectDAO projectDAO = new ProjectJsonDAO(request.getServletContext(), "/data/projets.json");
+        CompetenceDAO competenceDAO = new CompetenceJsonDAO(request.getServletContext(), "/data/competences.json");
+        ProjectCompetenceDAO projectCompetenceDAO = new ProjectCompetenceJsonDAO(
+                request.getServletContext(),
+                "/data/competences_de_projet.json",
+                projectDAO,
+                competenceDAO
         );
 
+        // Récupérer tous les projets
+        List<Project> projects = projectDAO.getAll();
         request.setAttribute("projects", projects);
+
+        // Associer chaque projet à ses compétences
+        Map<Project, List<ProjectCompetence>> projectsCompetences = new HashMap<>();
+        for (Project project : projects) {
+            projectsCompetences.put(project, projectCompetenceDAO.getByProjectTitle(project.getTitle()));
+        }
+        request.setAttribute("projectsCompetences", projectsCompetences);
+
+        // Récupérer toutes les compétences uniques liées aux projets
+        List<Competence> competences = new ArrayList<>();
+        for (List<ProjectCompetence> projectCompetences : projectsCompetences.values()) {
+            for (ProjectCompetence projectCompetence : projectCompetences) {
+                if (!competences.contains(projectCompetence.getC())) {
+                    competences.add(projectCompetence.getC());
+                }
+            }
+        }
+        request.setAttribute("competences", competences);
+
+        // Forward vers la vue
         request.getRequestDispatcher("views/projects.jsp").forward(request, response);
     }
 
     private void competences(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // DAO pour compétences
+        CompetenceDAO competenceDAO = new CompetenceJsonDAO(request.getServletContext(), "/data/competences.json");
+
+        // Récupération de toutes les compétences
+        List<Competence> competences = competenceDAO.getAll();
+        request.setAttribute("competences", competences);
+
+        // Forward vers la vue
         request.getRequestDispatcher("views/competences.jsp").forward(request, response);
     }
 

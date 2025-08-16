@@ -1,16 +1,16 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="Model.Experience" %>
 <%@ page import="java.util.List" %>
+<%@ page import="Model.ExperienceCompetence" %>
+<%@ page import="java.util.Map" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <%
-    List<Experience> experiencesInfo;
-    List<Experience> experiencesTierces;
-    if (request.getAttribute("experiencesInfo") != null)
-        experiencesInfo = (List<Experience>) request.getAttribute("experiencesInfo");
-    else experiencesInfo = new ArrayList<>();
-    if (request.getAttribute("experiencesTierces") != null)
-        experiencesTierces = (List<Experience>) request.getAttribute("experiencesTierces");
-    else experiencesTierces = new ArrayList<>();
+    List<Experience> experiences = (List<Experience>) request.getAttribute("experiences");
+    Map<Experience, List<ExperienceCompetence>> experiencesCompetences =
+            (Map<Experience, List<ExperienceCompetence>>) request.getAttribute("experiencesCompetences");
+
+    if (experiences == null) experiences = new java.util.ArrayList<>();
+    if (experiencesCompetences == null) experiencesCompetences = new java.util.HashMap<>();
 %>
 <!DOCTYPE html>
 <html lang="fr">
@@ -32,7 +32,8 @@
             <h2>Expériences en Informatique</h2>
             <ul>
                 <%
-                    for (Experience exp : experiencesInfo) {
+                    for (Experience exp : experiences) {
+                        if (exp.getType().equalsIgnoreCase("info")) {
                 %>
                 <li>
                     <div class="timeline-marker"></div>
@@ -47,19 +48,24 @@
                             <li><%= mission %></li>
                             <% } %>
                         </ul>
-                        <% if (exp.getCompetences() != null && !exp.getCompetences().isEmpty()) { %>
+                        <%
+                            List<ExperienceCompetence> compList = experiencesCompetences.get(exp);
+                            if (compList != null && !compList.isEmpty()) {
+                        %>
                         <div class="competence-slider">
-                            <% for (Model.Competence comp : exp.getCompetences()) { %>
-                            <a href="competenceController?comp=<%= java.net.URLEncoder.encode(comp.getName(), "UTF-8") %>"
+                            <% for (ExperienceCompetence expComp : compList) { %>
+                            <a href="competenceController?comp=<%= java.net.URLEncoder.encode(expComp.getC().getName(), "UTF-8") %>"
                                class="competence-badge">
-                                <%= comp.getName() %>
+                                <%= expComp.getC().getName() %> (<%= expComp.getLevel() %>)
                             </a>
                             <% } %>
                         </div>
                         <% } %>
                     </div>
                 </li>
-                <% } %>
+                <%     }
+                }
+                %>
             </ul>
         </div>
 
@@ -68,7 +74,8 @@
             <h2>Expériences Tierces</h2>
             <ul>
                 <%
-                    for (Experience exp : experiencesTierces) {
+                    for (Experience exp : experiences) {
+                        if (exp.getType().equalsIgnoreCase("tierce")) {
                 %>
                 <li>
                     <div class="timeline-marker"></div>
@@ -83,19 +90,24 @@
                             <li><%= mission %></li>
                             <% } %>
                         </ul>
-                        <% if (exp.getCompetences() != null && !exp.getCompetences().isEmpty()) { %>
+                        <%
+                            List<ExperienceCompetence> compList = experiencesCompetences.get(exp);
+                            if (compList != null && !compList.isEmpty()) {
+                        %>
                         <div class="competence-slider">
-                            <% for (Model.Competence comp : exp.getCompetences()) { %>
-                            <a href="competenceController?comp=<%= java.net.URLEncoder.encode(comp.getName(), "UTF-8") %>"
+                            <% for (ExperienceCompetence expComp : compList) { %>
+                            <a href="competenceController?comp=<%= java.net.URLEncoder.encode(expComp.getC().getName(), "UTF-8") %>"
                                class="competence-badge">
-                                <%= comp.getName() %>
+                                <%= expComp.getC().getName() %> (<%= expComp.getLevel() %>)
                             </a>
                             <% } %>
                         </div>
                         <% } %>
                     </div>
                 </li>
-                <% } %>
+                <%     }
+                }
+                %>
             </ul>
         </div>
     </div>

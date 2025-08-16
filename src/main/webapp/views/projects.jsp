@@ -2,11 +2,17 @@
 <%@ page import="Model.Vignette" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
+<%@ page import="Model.ProjectCompetence" %>
+<%@ page import="java.util.Map" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
-<% List<Project> projects;
-    if (request.getAttribute("projects") != null)
-        projects = (List<Project>) request.getAttribute("projects");
-    else projects = new ArrayList<>();%>
+<% List<Project> projects = (List<Project>) request.getAttribute("projects");
+    Map<Project, List<ProjectCompetence>> projectsCompetences =
+            (Map<Project, List<ProjectCompetence>>) request.getAttribute("projectsCompetences");
+
+    if (projects == null) projects = new java.util.ArrayList<>();
+    if (projectsCompetences == null) projectsCompetences = new java.util.HashMap<>();
+%>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
