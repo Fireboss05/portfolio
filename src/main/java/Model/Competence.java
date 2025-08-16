@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.Objects;
+
 public class Competence {
     private String name;
 
@@ -18,4 +20,15 @@ public class Competence {
         this.name = name;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Competence that = (Competence) o;
+        return Objects.equals(name, that.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(name);
+    }
 }

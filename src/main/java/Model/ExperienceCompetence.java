@@ -1,14 +1,14 @@
 package Model;
 
-public class ProjectExperience {
+public class ExperienceCompetence {
     private Experience e;
     private Competence c;
     private String level;
 
-    public ProjectExperience() {
+    public ExperienceCompetence() {
     }
 
-    public ProjectExperience(Experience e, Competence c, String level) {
+    public ExperienceCompetence(Experience e, Competence c, String level) {
         this.e = e;
         this.c = c;
         this.level = level;

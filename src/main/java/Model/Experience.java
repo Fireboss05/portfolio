@@ -2,6 +2,7 @@ package Model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Experience {
 
@@ -18,11 +19,13 @@ public class Experience {
 
     private List<String> missions;
 
+    private String type;
+
     public Experience(){
 
     }
 
-    public Experience(String title, String company, String contract_type, String start_date, String end_date, String city, String region, String country, List<String> missions) {
+    public Experience(String title, String company, String contract_type, String start_date, String end_date, String city, String region, String country, List<String> missions, String type) {
         this.title = (title != null) ? title : "Missing Title";
         this.company = (company != null) ? company : "Missing Company";
         this.contract_type = (contract_type != null) ? contract_type : "Missing Contract Type";
@@ -32,6 +35,7 @@ public class Experience {
         this.region = (region != null) ? region : "Missing Region";
         this.country = (country != null) ? country : "Missing Country";
         this.missions = (missions != null) ? missions : new ArrayList<>();
+        this.type = (type != null) ? type : "Missing Type";
     }
 
     public String getTitle() {
@@ -106,4 +110,25 @@ public class Experience {
         this.missions = missions;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        //TODO change to something more accurate, like title + company + date or IDK, for the moment it's reflective of the BDD implementation but can be improved
+        if (o == null || getClass() != o.getClass()) return false;
+        Experience that = (Experience) o;
+        return Objects.equals(title, that.title);
+    }
+
+    @Override
+    public int hashCode() {
+        //TODO change to something more accurate, like title + company + date or IDK, for the moment it's reflective of the BDD implementation but can be improved
+        return Objects.hashCode(title);
+    }
 }

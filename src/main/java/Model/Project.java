@@ -2,6 +2,8 @@ package Model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Objects;
+
 public class Project {
     static final String PROJECT_IMAGE_PATH = "./images/projets/";
 
@@ -54,5 +56,17 @@ public class Project {
 
     public void setVignette(Vignette vignette) {
         this.vignette = vignette;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Project project = (Project) o;
+        return Objects.equals(title, project.title);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(title);
     }
 }
