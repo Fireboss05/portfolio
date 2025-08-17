@@ -1,13 +1,16 @@
 {
   "competences": [
     {
-      "name": "Java"
+      "name": "Java",
+      "detail_file_name": "java.jsp"
     },
     {
-      "name": "JakartaEE"
+      "name": "JakartaEE",
+      "detail_file_name": "jakartaEE.jsp"
     },
     {
-      "name": "JavaScript"
+      "name": "JavaScript",
+      "detail_file_name": "javascript.jsp"
     }
   ]
 }
