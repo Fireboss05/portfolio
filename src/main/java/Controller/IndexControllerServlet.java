@@ -24,8 +24,8 @@ public class IndexControllerServlet extends HttpServlet {
             case "about":
                 about(request, response);
                 break;
-            case "parcours":
-                parcours(request, response);
+            case "experiences":
+                experiences(request, response);
                 break;
             case "contact":
                 contact(request, response);
@@ -51,7 +51,7 @@ public class IndexControllerServlet extends HttpServlet {
         request.getRequestDispatcher("views/about.jsp").forward(request, response);
     }
 
-    private void parcours(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    private void experiences(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ExperienceDAO experienceDAO = new ExperienceJsonDAO(request.getServletContext(), "/data/experiences.json");
         CompetenceDAO competenceDAO = new CompetenceJsonDAO(request.getServletContext(), "/data/competences.json");
         ExperienceCompetenceDAO experienceCompetenceDAO = new ExperienceCompetenceJsonDAO(request.getServletContext(), "/data/competences_d_experience.json",experienceDAO, competenceDAO);
@@ -75,10 +75,8 @@ public class IndexControllerServlet extends HttpServlet {
         }
         request.setAttribute("competences", competences);
 
-        request.getRequestDispatcher("views/parcours.jsp").forward(request, response);
+        request.getRequestDispatcher("views/experiences.jsp").forward(request, response);
     }
-
-
 
     private void projects(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Instanciation des DAO
