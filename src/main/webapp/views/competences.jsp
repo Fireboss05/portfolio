@@ -33,7 +33,7 @@
             for (Competence comp : competences) {
         %>
         <div class="competence-item">
-            <h2><%= comp.getName() %></h2>
+            <h2><a href="competenceController?comp=<%= comp.getName() %>"><%= comp.getName() %></a></h2>
             <ul>
                 <%
                     List<ExperienceCompetence> expComps = competenceExperiences.get(comp);
