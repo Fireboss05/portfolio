@@ -300,6 +300,17 @@ a:hover {
     padding-bottom: 2px;
 }
 
+.competence-item h2 a {
+    text-decoration: none;
+    color: inherit; /* garde la couleur du h2 */
+}
+
+.competence-item h2 a:hover {
+    color: #007bff; /* ou la même couleur que tes autres liens */
+    text-decoration: underline; /* ou border-bottom: 1px solid #007bff; */
+    cursor: pointer;
+}
+
 /* Liste interne (expériences / projets) */
 .competence-item ul {
     list-style: none;
