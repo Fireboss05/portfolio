@@ -8,17 +8,19 @@
         "title": "Not so Alone",
         "description": "(Premier) Jeu sur unity à l'occasion d'une GameJam",
         "image": "not_so_alone.webp"
-      }
+      },
+      "detail_file_name": "not_so_alone.jsp"
     },
     {
-      "title": "Invoquez Esperez",
+      "title": "Invoquez Espérez",
       "description": "Jeu sur unity à l'occasion d'une GameJam. Je me suis occupé de 50% du code et 50% du visuel. Mon 4e projet sur Unity",
       "image": "invoquez_esperez.png",
       "vignette": {
-        "title": "Invoquez Esperez",
+        "title": "Invoquez Espérez",
         "description": "Jeu sur unity à l'occasion d'une GameJam",
         "image": "invoquez_esperez.png"
-      }
+      },
+      "detail_file_name": "invoquez_esperez.jsp"
     },
     {
       "title": "Fond d'écran Têtard",
@@ -28,7 +30,8 @@
         "title": "Fond d'écran Têtard",
         "description": "Fond d'écran que j'ai fait pour implémenter...",
         "image": "poissons.jpg"
-      }
+      },
+      "detail_file_name": "poissons.jsp"
     },
     {
       "title": "Fractales de Julia",
@@ -38,7 +41,8 @@
         "title": "Fractales de Julia",
         "description": "Visualisation des fractales de l'ensemble de Julia",
         "image": "julia_projet_Julia.png"
-      }
+      },
+      "detail_file_name": "julia_projet_Julia.jsp"
     },
     {
       "title": "Ensemble de Mandelbrot",
@@ -48,7 +52,8 @@
         "title": "Ensemble de Mandelbrot",
         "description": "Visualisation de l'ensemble de Mandelbrot",
         "image": "mandelbrot_projet_MandelbrotFin.png"
-      }
+      },
+      "detail_file_name": "mandelbrot_projet_MandelbrotFin.jsp"
     }
   ]
 }

@@ -37,11 +37,11 @@ public class Competence {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Competence that = (Competence) o;
-        return Objects.equals(name, that.name) && Objects.equals(detailFileName, that.detailFileName);
+        return Objects.equals(name, that.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(name) ^ Objects.hashCode(detailFileName);
+        return Objects.hashCode(name);
     }
 }

@@ -12,14 +12,17 @@ public class Project {
     @JsonProperty("image")
     private String imageFilename;
     private Vignette vignette;
+    @JsonProperty("detail_file_name")
+    private String detailFileName;
 
     public Project(){
 
     }
-    public Project(String title, String description, String imageFilename) {
+    public Project(String title, String description, String imageFilename, String detailFileName) {
         this.title = (title != null) ? title : "Missing Title";
         this.description = (description != null) ? description : "Missing Description";
         this.imageFilename = (imageFilename != null) ? imageFilename : "default.png";
+        this.detailFileName = detailFileName;
     }
 
     public String getTitle() {
@@ -56,6 +59,14 @@ public class Project {
 
     public void setVignette(Vignette vignette) {
         this.vignette = vignette;
+    }
+
+    public String getDetailFileName() {
+        return detailFileName;
+    }
+
+    public void setDetailFileName(String detailFileName) {
+        this.detailFileName = detailFileName;
     }
 
     @Override
