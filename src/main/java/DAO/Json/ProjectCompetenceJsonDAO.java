@@ -58,7 +58,7 @@ public class ProjectCompetenceJsonDAO implements ProjectCompetenceDAO {
 
             // Transformation DTO -> ProjectCompetence complet
             return dtos.stream().map(dto -> {
-                Project proj = projectDAO.getByTitle(dto.project);
+                Project proj = projectDAO.getByName(dto.project);
                 Competence comp = competenceDAO.getByName(dto.competence);
                 return new ProjectCompetence(proj, comp, dto.level);
             }).collect(Collectors.toList());

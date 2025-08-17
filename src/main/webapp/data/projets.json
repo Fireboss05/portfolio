@@ -1,6 +1,7 @@
 {
   "projects": [
     {
+      "name": "not_so_alone",
       "title": "Not so Alone",
       "description": "(Premier) Jeu sur unity à l'occasion d'une GameJam (en duo). Je me suis occupé de 90% du code et 0% du visuel",
       "image": "not_so_alone.webp",
@@ -12,6 +13,7 @@
       "detail_file_name": "not_so_alone.jsp"
     },
     {
+      "name": "invoquez_esperez",
       "title": "Invoquez Espérez",
       "description": "Jeu sur unity à l'occasion d'une GameJam. Je me suis occupé de 50% du code et 50% du visuel. Mon 4e projet sur Unity",
       "image": "invoquez_esperez.png",
@@ -23,6 +25,7 @@
       "detail_file_name": "invoquez_esperez.jsp"
     },
     {
+      "name": "poissons",
       "title": "Fond d'écran Têtard",
       "description": "Fond d'écran que j'ai fait pour implémenter un algorithme de création de courbe (Catmull-Rom)",
       "image": "poissons.jpg",
@@ -34,6 +37,7 @@
       "detail_file_name": "poissons.jsp"
     },
     {
+      "name": "julia_projet_Julia",
       "title": "Fractales de Julia",
       "description": "Visualisation des fractales de l'ensemble de Julia (statique). Codé sur processing (application de bureau)",
       "image": "julia_projet_Julia.png",
@@ -45,6 +49,7 @@
       "detail_file_name": "julia_projet_Julia.jsp"
     },
     {
+      "name": "mandelbrot_projet_MandelbrotFin",
       "title": "Ensemble de Mandelbrot",
       "description": "Visualisation de l'ensemble de Mandelbrot avec un zoom (peu d'optimisation). Codé sur processing (application de bureau)",
       "image": "mandelbrot_projet_MandelbrotFin.png",

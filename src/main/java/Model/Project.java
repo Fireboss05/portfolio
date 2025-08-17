@@ -7,6 +7,7 @@ import java.util.Objects;
 public class Project {
     static final String PROJECT_IMAGE_PATH = "./images/projets/";
 
+    private String name;
     private String title;
     private String description;
     @JsonProperty("image")
@@ -18,11 +19,20 @@ public class Project {
     public Project(){
 
     }
-    public Project(String title, String description, String imageFilename, String detailFileName) {
+    public Project(String name, String title, String description, String imageFilename, String detailFileName) {
+        this.name = (name != null) ? name : "missing_name";
         this.title = (title != null) ? title : "Missing Title";
         this.description = (description != null) ? description : "Missing Description";
         this.imageFilename = (imageFilename != null) ? imageFilename : "default.png";
-        this.detailFileName = detailFileName;
+        this.detailFileName = (detailFileName != null) ? detailFileName : "default";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getTitle() {
@@ -73,11 +83,11 @@ public class Project {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Project project = (Project) o;
-        return Objects.equals(title, project.title);
+        return Objects.equals(name, project.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(title);
+        return Objects.hashCode(name);
     }
 }

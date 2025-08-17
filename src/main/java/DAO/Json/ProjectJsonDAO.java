@@ -43,6 +43,14 @@ public class ProjectJsonDAO implements ProjectDAO {
     }
 
     @Override
+    public Project getByName(String name) {
+        return getAll().stream()
+                .filter(p -> p.getName().equalsIgnoreCase(name))
+                .findFirst()
+                .orElse(null);
+    }
+
+    @Override
     public Project getByTitle(String title) {
         return getAll().stream()
                 .filter(p -> p.getTitle().equalsIgnoreCase(title))
