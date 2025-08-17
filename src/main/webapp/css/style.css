@@ -113,6 +113,18 @@ a:hover {
     height: 100%;
 }
 
+.project-card a.card-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    text-decoration: none;
+    color: inherit;
+    background: transparent; /* invisible */
+}
+
 .card-normal .image-wrapper {
     width: 100%;
     height: 80%; /* 👈 visible à 80% */

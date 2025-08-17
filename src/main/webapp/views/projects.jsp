@@ -42,6 +42,7 @@
                     </div>
                 </div>
                 <div class="card-zoom">
+                    <a href="projectController?proj=<%=project.getName()%>" class="card-link"></a>
                     <div class="image-wrapper">
                         <img src="${pageContext.request.contextPath}/<%=project.getImagePath()%>"
                              alt="<%=project.getTitle()%>"/>
