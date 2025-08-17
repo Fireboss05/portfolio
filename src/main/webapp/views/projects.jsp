@@ -22,7 +22,7 @@
 </head>
 <body>
 
-<%@ include file="includes/header.jsp" %>
+<%@ include file="/views/includes/header.jsp" %>
 
 <main>
     <section class="projects container">
@@ -56,7 +56,7 @@
     </section>
 </main>
 
-<%@ include file="includes/footer.jsp" %>
+<%@ include file="/views/includes/footer.jsp" %>
 
 </body>
 </html>

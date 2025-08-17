@@ -8,13 +8,13 @@
 </head>
 <body>
 
-<%@ include file="includes/header.jsp" %>
+<%@ include file="/views/includes/header.jsp" %>
 
 <main>
     <h1>A Propos</h1>
 </main>
 
-<%@ include file="includes/footer.jsp" %>
+<%@ include file="/views/includes/footer.jsp" %>
 
 </body>
 </html>

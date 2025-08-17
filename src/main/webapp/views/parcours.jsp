@@ -21,7 +21,7 @@
 </head>
 <body>
 
-<%@ include file="includes/header.jsp" %>
+<%@ include file="/views/includes/header.jsp" %>
 
 <main>
     <h1>Mon Parcours</h1>
@@ -113,7 +113,7 @@
     </div>
 </main>
 
-<%@ include file="includes/footer.jsp" %>
+<%@ include file="/views/includes/footer.jsp" %>
 
 </body>
 </html>
