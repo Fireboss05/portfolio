@@ -19,6 +19,7 @@
     <meta charset="UTF-8">
     <title>Mes Projets - Mon Portfolio</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <%@ include file="/views/includes/meta-robots.jsp" %>
 </head>
 <body>
 
