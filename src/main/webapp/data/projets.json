@@ -25,6 +25,90 @@
       "detail_file_name": "invoquez_esperez.jsp"
     },
     {
+      "name": "ia_backgammon",
+      "title": "IA Backgammon",
+      "description": "Application des algorithmes minimax, alpha-beta et Monte-Carlo Tree Search, adaptés au jeu du Backgammon. Projet de cours",
+      "image": "default.png",
+      "vignette": {
+        "title": "IA Backgammon",
+        "description": "Applicaion des algos classique pour les jeux 2 joueurs ...",
+        "image": "default.png"
+      },
+      "detail_file_name": "ia_backgammon.jsp"
+    },
+    {
+      "name": "automates_cellulaires",
+      "title": "Automates Cellulaires",
+      "description": "Implémentation des automates cellulaires les plus classiques, avec un interface simple en Java. Projet de cours",
+      "image": "default.png",
+      "vignette": {
+        "title": "Automates Cellulaires",
+        "description": "Implémentation des automates cellulaires les plus classiques",
+        "image": "default.png"
+      },
+      "detail_file_name": "automates_cellulaires.jsp"
+    },
+    {
+      "name": "processeur",
+      "title": "Architecture de processeur",
+      "description": "Création d'une architecture de processeur from scratch. Projet de cours",
+      "image": "default.png",
+      "vignette": {
+        "title": "Architecture de processeur",
+        "description": "Création d'une architecture de processeur from scratch.",
+        "image": "default.png"
+      },
+      "detail_file_name": "processeur.jsp"
+    },
+    {
+      "name": "compilateur",
+      "title": "Compilateur: Code intermédiaire",
+      "description": "Développement d'un compilateur: chargé de la partie code intermédiaire. Projet de cours",
+      "image": "default.png",
+      "vignette": {
+        "title": "Compilateur",
+        "description": "Développement d'un compilateur: code intermédiaire",
+        "image": "default.png"
+      },
+      "detail_file_name": "compilateur.jsp"
+    },
+    {
+      "name": "rtf_en_word",
+      "title": "Convertisseur .rtf en word",
+      "description": "Développement d'un convertisseur (parser) de fichier de script open-source (rtf) en fichier de script au format word. Projet à destination d'un proche",
+      "image": "default.png",
+      "vignette": {
+        "title": "Convertisseur .rtf en word",
+        "description": "Développement d'un convertisseur de fichier de script",
+        "image": "default.png"
+      },
+      "detail_file_name": "rtf_en_word.jsp"
+    },
+    {
+      "name": "portfolio",
+      "title": "Portfolio",
+      "description": "Développement d'un site web vitrine pour montrer mes projets, mes expériences, et mes compétences, complémentaire à un CV. Projet personnel",
+      "image": "default.png",
+      "vignette": {
+        "title": "Portfolio",
+        "description": "Développement d'un site web vitrine complémentaire à un CV.",
+        "image": "default.png"
+      },
+      "detail_file_name": "portfolio.jsp"
+    },
+    {
+      "name": "wake_on_wan",
+      "title": "Allumage à distance",
+      "description": "Conception et développement d'un système informatique et électronique pour allumer mon ordinateur fixe à distance. Projet personnel",
+      "image": "default.png",
+      "vignette": {
+        "title": "Allumage à distance",
+        "description": "Conception d'un systeme électronique pour allumer mon ordinateur",
+        "image": "default.png"
+      },
+      "detail_file_name": "wake_on_wan.jsp"
+    },
+    {
       "name": "poissons",
       "title": "Fond d'écran Têtard",
       "description": "Fond d'écran que j'ai fait pour implémenter un algorithme de création de courbe (Catmull-Rom)",
