@@ -11,6 +11,7 @@
 
 <main>
   <h1>Not so Alone</h1>
+  <p><a href="https://gamejolt.com/games/Notsoalone/492713">Not so Alone</a></p>
 </main>
 
 <%@ include file="/views/includes/footer.jsp" %>

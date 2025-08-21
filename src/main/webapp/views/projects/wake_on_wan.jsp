@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Invoquez Espérez - Mon Portfolio</title>
+    <title>Allumage à distance - Mon Portfolio</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
     <%@ include file="/views/includes/meta-robots.jsp" %>
 </head>
@@ -11,8 +11,11 @@
 <%@ include file="/views/includes/header.jsp" %>
 
 <main>
-    <h1>Invoquez Espérez</h1>
-    <p><a href="https://flad-dev.itch.io/invoquez-esperez">Invoquez Espérez</a></p>
+    <h1>Allumage à distance</h1>
+    <p>
+        Je ne vais pas partager le repos github car la sécurité de mon système en dépend.
+        On pourrait dire que je n'ai pas confiance en mon système, et c'est le cas !
+    </p>
 </main>
 
 <%@ include file="/views/includes/footer.jsp" %>
