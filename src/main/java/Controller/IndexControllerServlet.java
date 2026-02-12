@@ -127,26 +127,18 @@ public class IndexControllerServlet extends HttpServlet {
         // Récupération de toutes les compétences
         List<Competence> competences = competenceDAO.getAll();
 
-        // Préparer les maps : Compétence -> Expériences / Projets
-        Map<Competence, List<ExperienceCompetence>> competenceExperiences = new HashMap<>();
-        Map<Competence, List<ProjectCompetence>> competenceProjects = new HashMap<>();
-
         // Résultat trié : Compétence -> Affichables
         Map<Competence, List<DisplayableCompetence>> competenceDisplays = new HashMap<>();
         for (Competence c : competences) {
             // Expériences liées à la compétence
             List<ExperienceCompetence> expComps = expCompDAO.getByCompetenceName(c.getName());
-            if (expComps != null && !expComps.isEmpty()) {
-                competenceExperiences.put(c, expComps);
-            } else {
+            if (expComps == null || expComps.isEmpty()) {
                 expComps = new ArrayList<>();
             }
 
             // Projets liés à la compétence
             List<ProjectCompetence> projComps = projCompDAO.getByCompetenceName(c.getName());
-            if (projComps != null && !projComps.isEmpty()) {
-                competenceProjects.put(c, projComps);
-            } else {
+            if (projComps == null || projComps.isEmpty()) {
                 projComps = new ArrayList<>();
             }
 
