@@ -1,9 +1,139 @@
 {
   "project_competences": [
     {
-      "project": "",
-      "competence": "",
-      "level": ""
+      "project": "invoquez_esperez",
+      "competence": "C#",
+      "level": "Intermédiaire"
+    },
+    {
+      "project": "invoquez_esperez",
+      "competence": "Gestion De Projet",
+      "level": "Débutant"
+    },
+    {
+      "project": "not_so_alone",
+      "competence": "C#",
+      "level": "Débutant"
+    },
+    {
+      "project": "not_so_alone",
+      "competence": "Gestion De Projet",
+      "level": "Débutant"
+    },
+    {
+      "project": "ia_backgammon",
+      "competence": "Algorithmes",
+      "level": "Intermédiaire"
+    },
+    {
+      "project": "ia_backgammon",
+      "competence": "Java",
+      "level": "Avancé"
+    },
+    {
+      "project": "ia_backgammon",
+      "competence": "Python",
+      "level": "Avancé"
+    },
+    {
+      "project": "automates_cellulaires",
+      "competence": "Git",
+      "level": "Intermédiaire"
+    },
+    {
+      "project": "automates_cellulaires",
+      "competence": "Travail en Groupe",
+      "level": "Avancé"
+    },
+    {
+      "project": "automates_cellulaires",
+      "competence": "Gestion de Projet",
+      "level": "Intermédiaire"
+    },
+    {
+      "project": "automates_cellulaires",
+      "competence": "Algorithmes",
+      "level": "Intermédiaire"
+    },
+    {
+      "project": "processeur",
+      "competence": "R&D",
+      "level": "Débutant"
+    },
+    {
+      "project": "processeur",
+      "competence": "Travail en Groupe",
+      "level": "Avancé"
+    },
+    {
+      "project": "processeur",
+      "competence": "Organisation",
+      "level": "Intermédiaire"
+    },
+    {
+      "project": "compilateur",
+      "competence": "Assembleur",
+      "level": "Débutant"
+    },
+    {
+      "project": "compilateur",
+      "competence": "Gestion De Projet",
+      "level": "Intermédiaire"
+    },
+    {
+      "project": "compilateur",
+      "competence": "Travail en Groupe",
+      "level": "Avancé"
+    },
+    {
+      "project": "compilateur",
+      "competence": "R&D",
+      "level": "Débutant"
+    },
+    {
+      "project": "compilateur",
+      "competence": "Algorithmes",
+      "level": "Intermédiaire"
+    },
+    {
+      "project": "compilateur",
+      "competence": "Organisation",
+      "level": "Intermédiaire"
+    },
+    {
+      "project": "rtf_en_word",
+      "competence": "Communication",
+      "level": "Intermédiaire"
+    },
+    {
+      "project": "portfolio",
+      "competence": "Java",
+      "level": "Avancé"
+    },
+    {
+      "project": "portfolio",
+      "competence": "Gestion de Projet",
+      "level": "Avancé"
+    },
+    {
+      "project": "portfolio",
+      "competence": "Organisation",
+      "level": "Avancé"
+    },
+    {
+      "project": "portfolio",
+      "competence": "JavaScript",
+      "level": "Intermédiaire"
+    },
+    {
+      "project": "portfolio",
+      "competence": "JakartaEE",
+      "level": "Débutant"
+    },
+    {
+      "project": "wake_on_wan",
+      "competence": "C++/C",
+      "level": "Intermédiaire"
     }
   ]
 }

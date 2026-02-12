@@ -1,34 +1,54 @@
 {
   "experience_competences": [
     {
-      "experience": "Développeur Full Stack",
-      "competence": "Java",
+      "experience": "Ingénieur Développement d’Outils",
+      "competence": "Python",
       "level": "Avancé"
     },
     {
-      "experience": "Développeur Full Stack",
-      "competence": "JakartaEE",
+      "experience": "Ingénieur Développement d’Outils",
+      "competence": "R&D",
       "level": "Intermédiaire"
     },
     {
-      "experience": "Développeur Full Stack",
-      "competence": "JavaScript",
+      "experience": "Technicien de Déploiement",
+      "competence": "Communication",
       "level": "Avancé"
     },
     {
-      "experience": "Développeur Full Stack 2",
-      "competence": "Java",
+      "experience": "Technicien de Déploiement",
+      "competence": "Windows",
       "level": "Avancé"
     },
     {
-      "experience": "Développeur Full Stack 2",
-      "competence": "JakartaEE",
+      "experience": "Employé Polyvalent de Restauration Rapide",
+      "competence": "Autonomie",
+      "level": "Avancé"
+    },
+    {
+      "experience": "Employé Polyvalent de Restauration Rapide",
+      "competence": "Organisation",
       "level": "Intermédiaire"
     },
     {
-      "experience": "Développeur Full Stack 2",
-      "competence": "JavaScript",
-      "level": "Avancé"
+      "experience": "Responsable Réseau",
+      "competence": "Travail en Groupe",
+      "level": "Intermédiaire"
+    },
+    {
+      "experience": "Responsable Réseau",
+      "competence": "Organisation",
+      "level": "Débutant"
+    },
+    {
+      "experience": "Responsable de la Prévention",
+      "competence": "Travail en Groupe",
+      "level": "Débutant"
+    },
+    {
+      "experience": "Responsable de la Prévention",
+      "competence": "Organisation",
+      "level": "Débutant"
     }
   ]
 }
