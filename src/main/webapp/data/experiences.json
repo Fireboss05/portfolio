@@ -1,34 +1,95 @@
 {
   "experiences": [
     {
-      "title": "Développeur Full Stack",
-      "company": "TechCorp",
-      "contract_type": "CDI",
-      "start_date": "2023-05-01",
-      "end_date": "2025-08-01",
-      "city": "Paris",
-      "region": "Île-de-France",
+      "title": "Ingénieur Développement d’Outils",
+      "company": "Artefacts Studio",
+      "contract_type": "Stage",
+      "start_date": "2024-09-15",
+      "end_date": "2025-01-31",
+      "city": "Lyon",
+      "region": "Rhône-Alpes",
       "country": "France",
       "missions": [
-        "Développement d'une application web en JakartaEE",
-        "Mise en place de tests unitaires et d'intégration",
-        "Optimisation des performances"
+        "Outils pour Windows (Bash, Python)",
+        "Outils Git (Bash, Python)"
       ],
       "type": "info"
     },
     {
-      "title": "Développeur Full Stack 2",
-      "company": "TechCorp",
-      "contract_type": "CDI",
-      "start_date": "2023-05-01",
-      "end_date": "2025-08-01",
-      "city": "Paris",
-      "region": "Île-de-France",
+      "title": "Technicien de Déploiement",
+      "company": "Euronews",
+      "contract_type": "CDD",
+      "start_date": "2022-07-01",
+      "end_date": "2022-08-01",
+      "city": "Lyon",
+      "region": "Rhône-Alpes",
       "country": "France",
       "missions": [
-        "Développement d'une application web en JakartaEE",
-        "Mise en place de tests unitaires et d'intégration",
-        "Optimisation des performances"
+        "Prise de rendez-vous avec les collaborateurs",
+        "Remplacement/Actualisation des postes de travail selon les besoins"
+      ],
+      "type": "info"
+    },
+    {
+      "title": "Technicien de Déploiement",
+      "company": "Euronews",
+      "contract_type": "Stage",
+      "start_date": "2022-06-01",
+      "end_date": "2022-07-01",
+      "city": "Lyon",
+      "region": "Rhône-Alpes",
+      "country": "France",
+      "missions": [
+        "Etiquetage et Inventaire",
+        "Master vers Windows 10"
+      ],
+      "type": "info"
+    },
+    {
+      "title": "Employé Polyvalent de Restauration Rapide",
+      "company": "Le Moulin",
+      "contract_type": "CDI",
+      "start_date": "2024-06-20",
+      "end_date": "2025-08-01",
+      "city": "Lyon",
+      "region": "Rhône-Alpes",
+      "country": "France",
+      "missions": [
+        "Fermeture de la boutique",
+        "Préparation et emballage de plats",
+        "Livraisons à Vélo-Charette"
+      ],
+      "type": "tierce"
+    },
+    {
+      "title": "Responsable Réseau",
+      "company": "BDE Polytech Lyon",
+      "contract_type": "Bénévolat",
+      "start_date": "2024-03-01",
+      "end_date": "2024-09-07",
+      "city": "Lyon",
+      "region": "Rhône-Alpes",
+      "country": "France",
+      "missions": [
+        "Organisation de l’évènement annuel",
+        "Coordination avec les autres BDE du réseau",
+        "Responsable des étudiants en évènements inter-écoles"
+      ],
+      "type": "tierce"
+    },
+    {
+      "title": "Responsable de la Prévention",
+      "company": "BDE Polytech Chambéry",
+      "contract_type": "Bénévolat",
+      "start_date": "2022-04-01",
+      "end_date": "2023-04-07",
+      "city": "Chambéry",
+      "region": "Savoie",
+      "country": "France",
+      "missions": [
+        "Organisation de stands de prévention",
+        "Réduction des risques en milieu festif",
+        "Formation du bureau et des étudiants à la réduction de risque"
       ],
       "type": "tierce"
     }
