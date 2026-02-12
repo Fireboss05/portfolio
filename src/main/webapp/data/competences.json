@@ -5,12 +5,67 @@
       "detail_file_name": "java.jsp"
     },
     {
-      "name": "JakartaEE",
-      "detail_file_name": "jakartaEE.jsp"
+      "name": "C++/C",
+      "detail_file_name": "cpp-c.jsp"
+    },
+
+    {
+      "name": "Python",
+      "detail_file_name": "python.jsp"
+    },
+    {
+      "name": "C#",
+      "detail_file_name": "csharp.jsp"
+    },
+    {
+      "name": "Git",
+      "detail_file_name": "git.jsp"
+    },
+    {
+      "name": "Gestion De Projet",
+      "detail_file_name": "gestion_de_projet.jsp"
+    },
+    {
+      "name": "Travail en Groupe",
+      "detail_file_name": "travail_en_groupe.jsp"
+    },
+    {
+      "name": "R&D",
+      "detail_file_name": "r_et_d.jsp"
+    },
+    {
+      "name": "Algorithmes",
+      "detail_file_name": "algorithmes.jsp"
+    },
+    {
+      "name": "Assembleur",
+      "detail_file_name": "assembleur.jsp"
+    },
+
+    {
+      "name": "Communication",
+      "detail_file_name": "communication.jsp"
+    },
+    {
+      "name": "Organisation",
+      "detail_file_name": "organisation.jsp"
+    },
+    {
+      "name": "Autonomie",
+      "detail_file_name": "autonomie.jsp"
+    },
+    {
+      "name": "Windows",
+      "detail_file_name": "windows.jsp"
     },
     {
       "name": "JavaScript",
       "detail_file_name": "javascript.jsp"
+    },
+    {
+      "name": "JakartaEE",
+      "detail_file_name": "jakartaEE.jsp"
     }
+
   ]
 }
