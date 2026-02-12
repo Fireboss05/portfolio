@@ -4,7 +4,6 @@ import DAO.ProjectCompetenceDAO;
 import DAO.ProjectDAO;
 import DAO.CompetenceDAO;
 import DAO.DTO.ProjectCompetenceDTO;
-import Model.ExperienceCompetence;
 import Model.Project;
 import Model.Competence;
 import Model.ProjectCompetence;
