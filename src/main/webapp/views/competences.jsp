@@ -2,6 +2,8 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.HashMap" %>
 <%@ page import="java.util.Map" %>
+<%@ page import="java.net.URLEncoder" %>
+<%@ page import="java.nio.charset.StandardCharsets" %>
 <%@ page import="Model.*" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <% List<Competence> competences = (List<Competence>) request.getAttribute("competences");
@@ -34,7 +36,7 @@
             for (Competence comp : competences) {
         %>
         <div class="competence-item">
-            <h2><a href="competenceController?comp=<%= comp.getName() %>"><%= comp.getName() %></a></h2>
+            <h2><a href="competenceController?comp=<%= URLEncoder.encode(comp.getName(), StandardCharsets.UTF_8) %>"><%= comp.getName() %></a></h2>
             <ul>
                 <%
                     List<ExperienceCompetence> expComps = competenceExperiences.get(comp);
