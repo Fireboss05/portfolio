@@ -7,14 +7,17 @@
 <%@ page import="Model.*" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
 <% List<Competence> competences = (List<Competence>) request.getAttribute("competences");
-    Map<Competence, List<ExperienceCompetence>> competenceExperiences =
-            (Map<Competence, List<ExperienceCompetence>>) request.getAttribute("competenceExperiences");
-    Map<Competence, List<ProjectCompetence>> competenceProjects =
-            (Map<Competence, List<ProjectCompetence>>) request.getAttribute("competenceProjects");
+//    Map<Competence, List<ExperienceCompetence>> competenceExperiences =
+//            (Map<Competence, List<ExperienceCompetence>>) request.getAttribute("competenceExperiences");
+//    Map<Competence, List<ProjectCompetence>> competenceProjects =
+//            (Map<Competence, List<ProjectCompetence>>) request.getAttribute("competenceProjects");
+    Map<Competence, List<DisplayableCompetence>> competenceDisplays =
+            (Map<Competence, List<DisplayableCompetence>>) request.getAttribute("competenceDisplays");
 
     if (competences == null) competences = new ArrayList<>();
-    if (competenceExperiences == null) competenceExperiences = new HashMap<>();
-    if (competenceProjects == null) competenceProjects = new HashMap<>();
+//    if (competenceExperiences == null) competenceExperiences = new HashMap<>();
+//    if (competenceProjects == null) competenceProjects = new HashMap<>();
+    if (competenceDisplays == null) competenceDisplays = new HashMap<>();
 %>
 <!DOCTYPE html>
 <html lang="fr">
@@ -38,28 +41,37 @@
         <div class="competence-item">
             <h2><a href="competenceController?comp=<%= URLEncoder.encode(comp.getName(), StandardCharsets.UTF_8) %>"><%= comp.getName() %></a></h2>
             <ul>
-                <%
-                    List<ExperienceCompetence> expComps = competenceExperiences.get(comp);
-                    if (expComps != null) {
-                        for (ExperienceCompetence ec : expComps) {
-                            Experience e = ec.getE();
-                %>
-                <li>
-                    <span class="level-label">Niveau:</span> <%= ec.getLevel() %>
-                    (Expérience : <%= e.getTitle() %>)
-                </li>
-                <%
-                        }
-                    }
+<%--                <%--%>
+<%--                    List<ExperienceCompetence> expComps = competenceExperiences.get(comp);--%>
+<%--                    if (expComps != null) {--%>
+<%--                        for (ExperienceCompetence ec : expComps) {--%>
+<%--                            Experience e = ec.getE();--%>
+<%--                %>--%>
+<%--                <li>--%>
+<%--                    <span class="level-label">Niveau:</span> <%= ec.getLevel() %>--%>
+<%--                    (Expérience : <%= e.getTitle() %>)--%>
+<%--                </li>--%>
+<%--                <%--%>
+<%--                        }--%>
+<%--                    }--%>
 
-                    List<ProjectCompetence> projComps = competenceProjects.get(comp);
-                    if (projComps != null) {
-                        for (ProjectCompetence pc : projComps) {
-                            Project p = pc.getP();
+<%--                    List<ProjectCompetence> projComps = competenceProjects.get(comp);--%>
+<%--                    if (projComps != null) {--%>
+<%--                        for (ProjectCompetence pc : projComps) {--%>
+<%--                            Project p = pc.getP();--%>
+<%--                %>--%>
+<%--                <li>--%>
+<%--                    <span class="level-label">Niveau:</span> <%= pc.getLevel() %>--%>
+<%--                    (Projet : <%= p.getTitle() %>)--%>
+<%--                </li>--%>
+                <%
+                    List<DisplayableCompetence> dispComps = competenceDisplays.get(comp);
+                    if (dispComps != null) {
+                        for (DisplayableCompetence dc : dispComps) {
                 %>
                 <li>
-                    <span class="level-label">Niveau:</span> <%= pc.getLevel() %>
-                    (Projet : <%= p.getTitle() %>)
+                    <span class="level-label">Niveau:</span> <%= dc.getLevel() %>
+                    (<%= dc.getDisplayType() %> : <%= dc.getDisplayTitle() %>)
                 </li>
                 <%
                         }

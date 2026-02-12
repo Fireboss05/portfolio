@@ -5,5 +5,6 @@ public class ExperienceCompetenceDTO {
     public String experience;
     public String competence;
     public String level;
+    public int order;
 }
 

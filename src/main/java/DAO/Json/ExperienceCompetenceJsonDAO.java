@@ -3,6 +3,7 @@ package DAO.Json;
 import DAO.ExperienceCompetenceDAO;
 import DAO.ExperienceDAO;
 import DAO.CompetenceDAO;
+import DAO.DTO.ExperienceCompetenceDTO;
 import Model.Experience;
 import Model.Competence;
 import Model.ExperienceCompetence;
@@ -13,6 +14,7 @@ import jakarta.servlet.ServletContext;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,13 +25,6 @@ public class ExperienceCompetenceJsonDAO implements ExperienceCompetenceDAO {
     private final ServletContext context;
     private final ExperienceDAO experienceDAO;
     private final CompetenceDAO competenceDAO;
-
-    // DTO interne pour mapper le JSON brut
-    private static class ExperienceCompetenceDTO {
-        public String experience;
-        public String competence;
-        public String level;
-    }
 
     public ExperienceCompetenceJsonDAO(ServletContext context, String jsonPath,
                                        ExperienceDAO experienceDAO,
@@ -60,7 +55,7 @@ public class ExperienceCompetenceJsonDAO implements ExperienceCompetenceDAO {
             return dtos.stream().map(dto -> {
                 Experience exp = experienceDAO.getByTitle(dto.experience);
                 Competence comp = competenceDAO.getByName(dto.competence);
-                return new ExperienceCompetence(exp, comp, dto.level);
+                return new ExperienceCompetence(exp, comp, dto.level, dto.order);
             }).collect(Collectors.toList());
 
         } catch (IOException e) {
@@ -73,6 +68,7 @@ public class ExperienceCompetenceJsonDAO implements ExperienceCompetenceDAO {
         return getAll().stream()
                 .filter(ec -> ec.getE() != null &&
                         ec.getE().getTitle().equalsIgnoreCase(experienceTitle))
+                .sorted(Comparator.comparingInt(ExperienceCompetence::getOrder))
                 .collect(Collectors.toList());
     }
 
@@ -81,6 +77,7 @@ public class ExperienceCompetenceJsonDAO implements ExperienceCompetenceDAO {
         return getAll().stream()
                 .filter(ec -> ec.getC() != null &&
                         ec.getC().getName().equalsIgnoreCase(competenceName))
+                .sorted(Comparator.comparingInt(ExperienceCompetence::getOrder))
                 .collect(Collectors.toList());
     }
 }

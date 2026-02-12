@@ -3,6 +3,8 @@ package DAO.Json;
 import DAO.ProjectCompetenceDAO;
 import DAO.ProjectDAO;
 import DAO.CompetenceDAO;
+import DAO.DTO.ProjectCompetenceDTO;
+import Model.ExperienceCompetence;
 import Model.Project;
 import Model.Competence;
 import Model.ProjectCompetence;
@@ -13,6 +15,7 @@ import jakarta.servlet.ServletContext;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,12 +27,6 @@ public class ProjectCompetenceJsonDAO implements ProjectCompetenceDAO {
     private final ProjectDAO projectDAO;
     private final CompetenceDAO competenceDAO;
 
-    // DTO interne pour mapping JSON
-    private static class ProjectCompetenceDTO {
-        public String project;
-        public String competence;
-        public String level;
-    }
 
     public ProjectCompetenceJsonDAO(ServletContext context, String jsonPath,
                                     ProjectDAO projectDAO,
@@ -60,7 +57,7 @@ public class ProjectCompetenceJsonDAO implements ProjectCompetenceDAO {
             return dtos.stream().map(dto -> {
                 Project proj = projectDAO.getByName(dto.project);
                 Competence comp = competenceDAO.getByName(dto.competence);
-                return new ProjectCompetence(proj, comp, dto.level);
+                return new ProjectCompetence(proj, comp, dto.level, dto.order);
             }).collect(Collectors.toList());
 
         } catch (IOException e) {
@@ -73,6 +70,7 @@ public class ProjectCompetenceJsonDAO implements ProjectCompetenceDAO {
         return getAll().stream()
                 .filter(pc -> pc.getP() != null &&
                         pc.getP().getTitle().equalsIgnoreCase(projectTitle))
+                .sorted(Comparator.comparingInt(ProjectCompetence::getOrder))
                 .collect(Collectors.toList());
     }
 
@@ -81,6 +79,7 @@ public class ProjectCompetenceJsonDAO implements ProjectCompetenceDAO {
         return getAll().stream()
                 .filter(pc -> pc.getC() != null &&
                         pc.getC().getName().equalsIgnoreCase(competenceName))
+                .sorted(Comparator.comparingInt(ProjectCompetence::getOrder))
                 .collect(Collectors.toList());
     }
 }

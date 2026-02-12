@@ -10,10 +10,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @WebServlet("/indexController")
 public class IndexControllerServlet extends HttpServlet {
@@ -132,24 +131,38 @@ public class IndexControllerServlet extends HttpServlet {
         Map<Competence, List<ExperienceCompetence>> competenceExperiences = new HashMap<>();
         Map<Competence, List<ProjectCompetence>> competenceProjects = new HashMap<>();
 
+        // Résultat trié : Compétence -> Affichables
+        Map<Competence, List<DisplayableCompetence>> competenceDisplays = new HashMap<>();
         for (Competence c : competences) {
             // Expériences liées à la compétence
             List<ExperienceCompetence> expComps = expCompDAO.getByCompetenceName(c.getName());
             if (expComps != null && !expComps.isEmpty()) {
                 competenceExperiences.put(c, expComps);
+            } else {
+                expComps = new ArrayList<>();
             }
 
             // Projets liés à la compétence
             List<ProjectCompetence> projComps = projCompDAO.getByCompetenceName(c.getName());
             if (projComps != null && !projComps.isEmpty()) {
                 competenceProjects.put(c, projComps);
+            } else {
+                projComps = new ArrayList<>();
             }
+
+            // Fusionner et trier par order
+            List<DisplayableCompetence> allComps =
+                    Stream.concat(expComps.stream(), projComps.stream())
+                            .sorted(Comparator.comparingInt(DisplayableCompetence::getOrder))
+                            .collect(Collectors.toList());
+            competenceDisplays.put(c, allComps);
         }
 
         // Passage des données à la JSP
         request.setAttribute("competences", competences);
-        request.setAttribute("competenceExperiences", competenceExperiences);
-        request.setAttribute("competenceProjects", competenceProjects);
+//        request.setAttribute("competenceExperiences", competenceExperiences);
+//        request.setAttribute("competenceProjects", competenceProjects);
+        request.setAttribute("competenceDisplays", competenceDisplays);
 
         // Forward vers la vue
         request.getRequestDispatcher("views/competences.jsp").forward(request, response);

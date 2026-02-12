@@ -3,52 +3,62 @@
     {
       "experience": "Ingénieur Développement d’Outils",
       "competence": "Python",
-      "level": "Avancé"
+      "level": "Avancé",
+      "order": 1
     },
     {
       "experience": "Ingénieur Développement d’Outils",
       "competence": "R&D",
-      "level": "Intermédiaire"
+      "level": "Intermédiaire",
+      "order": 1
     },
     {
       "experience": "Technicien de Déploiement",
       "competence": "Communication",
-      "level": "Avancé"
+      "level": "Avancé",
+      "order": 1
     },
     {
       "experience": "Technicien de Déploiement",
       "competence": "Windows",
-      "level": "Avancé"
+      "level": "Avancé",
+      "order": 1
     },
     {
       "experience": "Employé Polyvalent de Restauration Rapide",
       "competence": "Autonomie",
-      "level": "Avancé"
+      "level": "Avancé",
+      "order": 1
     },
     {
       "experience": "Employé Polyvalent de Restauration Rapide",
       "competence": "Organisation",
-      "level": "Intermédiaire"
+      "level": "Intermédiaire",
+      "order": 2
     },
     {
       "experience": "Responsable Réseau",
       "competence": "Travail en Groupe",
-      "level": "Intermédiaire"
+      "level": "Intermédiaire",
+      "order": 4
     },
     {
       "experience": "Responsable Réseau",
       "competence": "Organisation",
-      "level": "Débutant"
+      "level": "Débutant",
+      "order": 5
     },
     {
       "experience": "Responsable de la Prévention",
       "competence": "Travail en Groupe",
-      "level": "Débutant"
+      "level": "Débutant",
+      "order": 5
     },
     {
       "experience": "Responsable de la Prévention",
       "competence": "Organisation",
-      "level": "Débutant"
+      "level": "Débutant",
+      "order": 6
     }
   ]
 }
